@@ -33,6 +33,13 @@ body {
     flex-direction: column;
 }
 
+/* 会社概要ページのヘッダー */
+.about-page .hero {
+    background: var(--navy);
+    height: auto;
+    min-height: 80px;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
