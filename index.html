@@ -1,12 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Homepage</title>
+    <title>石垣しまんちゅツアー | 株式会社SHINKAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to My Homepage</h1>
-    <p>This is a simple homepage created using GitHub Pages.</p>
+    <header class="hero">
+        <nav>
+            <a href="index.html" class="logo">石垣しまんちゅツアー</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">会社概要</a></li>
+                <li><a href="#activities">アクティビティ</a></li>
+                <li><a href="#pricing">料金表</a></li>
+                <li><a href="#access">アクセス</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>しまんちゅツアー</h1>
+                <p class="subtitle">石垣の海で最高の思い出を</p>
+                <p>ダイビング、シュノーケリング、カヤックなど、様々なマリンアクティビティをご提供</p>
+            </div>
+            <div class="hero-form">
+                <h2>今すぐ予約</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="activity">アクティビティ</label>
+                        <select id="activity" required>
+                            <option value="">選択してください</option>
+                            <option value="diving">ダイビング</option>
+                            <option value="snorkeling">シュノーケリング</option>
+                            <option value="kayak">カヤック</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">希望日</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <button type="submit" class="submit-button">予約する</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section id="activities" class="section">
+        <h2>アクティビティ</h2>
+        <div class="activity-grid">
+            <div class="activity-card">
+                <div class="activity-image">
+                    <img src="images/diving.jpg" alt="ダイビング">
+                </div>
+                <h3>ダイビング</h3>
+                <p>沖縄の美しいサンゴ礁と熱帯魚の世界を探検</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image">
+                    <img src="images/snorkeling.jpg" alt="シュノーケリング">
+                </div>
+                <h3>シュノーケリング</h3>
+                <p>手軽に楽しめる海の散歩</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image">
+                    <img src="images/kayak.jpg" alt="カヤック">
+                </div>
+                <h3>カヤック</h3>
+                <p>静かな海を漕ぎながら自然を満喫</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section">
+        <h2>料金表</h2>
+        <div class="pricing-table">
+            <table>
+                <tr>
+                    <th>アクティビティ</th>
+                    <th>料金（1人）</th>
+                </tr>
+                <tr>
+                    <td>ダイビング（体験）</td>
+                    <td>¥12,000</td>
+                </tr>
+                <tr>
+                    <td>シュノーケリング</td>
+                    <td>¥5,000</td>
+                </tr>
+                <tr>
+                    <td>カヤック</td>
+                    <td>¥4,000</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="access" class="section">
+        <h2>アクセス</h2>
+        <div class="access-info">
+            <p>住所：沖縄県石垣市川平835-1</p>
+            <p>電話：098-123-4567</p>
+            <p>営業時間：9:00 - 18:00</p>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.9811175170955!2d124.15083577917726!3d24.451611984258593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e37c3402c3d%3A0x0!2z5rKW5Z-O55yM55-z5Z-O5biC5bed5bmh77yY77yT77yV4oiS77yR!5e0!3m2!1sja!2sjp!4v1711615131121!5m2!1sja!2sjp"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> 株式会社SHINKAI All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // メニュー項目をクリックしたらメニューを閉じる
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

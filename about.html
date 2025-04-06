@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要 | 石垣しまんちゅツアー</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+    <header class="hero">
+        <nav>
+            <a href="index.html" class="logo">石垣しまんちゅツアー</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">会社概要</a></li>
+                <li><a href="index.html#activities">アクティビティ</a></li>
+                <li><a href="index.html#pricing">料金表</a></li>
+                <li><a href="index.html#access">アクセス</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <h2>会社概要</h2>
+        <div class="about-content">
+            <div class="company-info">
+                <table class="company-table">
+                    <tr>
+                        <th>会社名</th>
+                        <td>株式会社SHINKAI</td>
+                    </tr>
+                    <tr>
+                        <th>代表取締役</th>
+                        <td>山田 太郎</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>2020年4月1日</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>沖縄県石垣市川平835-1</td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td>098-123-4567</td>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td>info@shinkai-tour.com</td>
+                    </tr>
+                    <tr>
+                        <th>営業時間</th>
+                        <td>9:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <th>定休日</th>
+                        <td>不定休</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="company-message">
+                <h3>代表メッセージ</h3>
+                <p>私たちは、石垣島の美しい海を守りながら、安全で楽しいマリンアクティビティを提供しています。</p>
+                <p>経験豊富なインストラクターが、初心者から上級者まで、一人一人に合わせた丁寧な指導を行います。</p>
+                <p>皆様の素晴らしい思い出作りをお手伝いできることを楽しみにしています。</p>
+            </div>
+
+            <div class="company-philosophy">
+                <h3>企業理念</h3>
+                <ul>
+                    <li>安全第一の運営</li>
+                    <li>環境保護への取り組み</li>
+                    <li>お客様満足度の追求</li>
+                    <li>地域社会との共生</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> 株式会社SHINKAI All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
