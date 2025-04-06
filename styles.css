@@ -29,7 +29,6 @@ body {
     background-position: center;
     height: 100vh;
     color: var(--white);
-    text-align: center;
     display: flex;
     flex-direction: column;
 }
@@ -70,10 +69,57 @@ nav ul li a:hover {
 .hero-content {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 2rem;
+}
+
+.hero-form {
+    flex: 1;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    color: var(--navy);
+}
+
+.hero-form h2 {
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.hero-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.hero-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+}
+
+.hero-form input,
+.hero-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    background: var(--white);
+}
+
+.hero-form .submit-button {
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .hero-content h1 {
@@ -121,11 +167,46 @@ nav ul li a:hover {
     text-align: center;
     transition: transform 0.3s;
     border: 1px solid var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activity-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: var(--navy-light);
+    position: relative;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
 }
 
 .activity-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0, 31, 63, 0.1);
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.1);
+}
+
+.activity-card h3 {
+    color: var(--navy);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.activity-card p {
+    color: var(--navy);
+    line-height: 1.6;
 }
 
 /* 料金表 */
@@ -280,15 +361,101 @@ footer {
         margin: 0 1rem;
     }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .hero-content {
+        flex-direction: column;
+        padding: 2rem;
     }
 
-    .hero-content .subtitle {
-        font-size: 1.5rem;
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .hero-form {
+        max-width: 100%;
     }
 
     .section {
         padding: 3rem 5%;
     }
+}
+
+/* 会社概要ページ */
+.company-info {
+    margin-bottom: 3rem;
+}
+
+.company-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.company-table th {
+    width: 30%;
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1rem;
+    text-align: left;
+}
+
+.company-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+.company-table ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+.company-message {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--gray-light);
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+}
+
+.company-message h3 {
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.company-message p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.company-philosophy {
+    padding: 2rem;
+    background-color: var(--gray-light);
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+}
+
+.company-philosophy h3 {
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.company-philosophy ul {
+    list-style-type: none;
+}
+
+.company-philosophy li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.company-philosophy li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-weight: bold;
 } 
