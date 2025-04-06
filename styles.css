@@ -5,19 +5,30 @@
     box-sizing: border-box;
 }
 
+:root {
+    --navy: #001f3f;
+    --navy-light: #003366;
+    --navy-lighter: #004080;
+    --blue: #0074D9;
+    --blue-light: #7FDBFF;
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray: #dddddd;
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--navy);
 }
 
 /* ヘッダー */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?okinawa,ocean');
+    background-image: linear-gradient(rgba(0, 31, 63, 0.7), rgba(0, 31, 63, 0.7)), url('images/IMG_20240331_151201.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
-    color: white;
+    color: var(--white);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -28,12 +39,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 31, 63, 0.8);
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--white);
 }
 
 nav ul {
@@ -46,13 +58,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #00bfff;
+    color: var(--blue-light);
 }
 
 .hero-content {
@@ -65,13 +77,23 @@ nav ul li a:hover {
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .subtitle {
+    font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--blue-light);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    color: var(--white);
 }
 
 /* セクション共通 */
@@ -82,7 +104,7 @@ nav ul li a:hover {
 .section h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: #0066cc;
+    color: var(--navy);
 }
 
 /* アクティビティ */
@@ -93,15 +115,17 @@ nav ul li a:hover {
 }
 
 .activity-card {
-    background: #f8f9fa;
+    background: var(--gray-light);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s;
+    border: 1px solid var(--gray);
 }
 
 .activity-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 31, 63, 0.1);
 }
 
 /* 料金表 */
@@ -118,17 +142,22 @@ table {
 th, td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--gray);
 }
 
 th {
-    background-color: #f8f9fa;
+    background-color: var(--navy);
+    color: var(--white);
 }
 
 /* 予約フォーム */
 .reservation-form {
     max-width: 500px;
     margin: 0 auto;
+    background: var(--gray-light);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
 }
 
 .form-group {
@@ -138,36 +167,103 @@ th {
 label {
     display: block;
     margin-bottom: 0.5rem;
+    color: var(--navy);
 }
 
 input, select {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--gray);
     border-radius: 5px;
+    background: var(--white);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.2);
 }
 
 /* ボタン */
 .cta-button, .submit-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #0066cc;
-    color: white;
+    background-color: var(--navy);
+    color: var(--white);
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover, .submit-button:hover {
-    background-color: #0052a3;
+    background-color: var(--navy-light);
+    transform: translateY(-2px);
 }
 
 /* フッター */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--navy);
+    color: var(--white);
     text-align: center;
     padding: 2rem;
+}
+
+/* アクセス情報 */
+.access-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.access-info p {
+    margin-bottom: 1rem;
+    color: var(--navy);
+}
+
+.map-container {
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 31, 63, 0.1);
+}
+
+/* 予約結果ページ */
+.reservation-result {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: var(--gray-light);
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+}
+
+.reservation-result h2 {
+    color: var(--navy);
+    margin-bottom: 2rem;
+}
+
+.error-list {
+    list-style: none;
+    color: #dc3545;
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--navy-light);
+    transform: translateY(-2px);
 }
 
 /* レスポンシブデザイン */
@@ -185,61 +281,14 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.5rem;
     }
 
     .section {
         padding: 3rem 5%;
     }
-}
-
-/* アクセス情報 */
-.access-info {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.access-info p {
-    margin-bottom: 1rem;
-}
-
-.map-container {
-    margin-top: 2rem;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* 予約結果ページ */
-.reservation-result {
-    max-width: 600px;
-    margin: 5rem auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-.reservation-result h2 {
-    color: #0066cc;
-    margin-bottom: 2rem;
-}
-
-.error-list {
-    list-style: none;
-    color: #dc3545;
-    margin-bottom: 2rem;
-}
-
-.back-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #0066cc;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.back-button:hover {
-    background-color: #0052a3;
 } 
