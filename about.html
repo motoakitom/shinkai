@@ -11,9 +11,13 @@
     <header class="hero">
         <nav>
             <div class="logo">石垣しまんちゅツアー</div>
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="#about">会社概要</a></li>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">会社概要</a></li>
                 <li><a href="index.html#activities">アクティビティ</a></li>
                 <li><a href="index.html#pricing">料金表</a></li>
                 <li><a href="index.html#reservation">予約</a></li>
@@ -22,11 +26,10 @@
         </nav>
     </header>
 
-    <section id="about" class="section">
+    <section class="about-section">
         <h2>会社概要</h2>
         <div class="about-content">
             <div class="company-info">
-                <h3>株式会社SHINKAI</h3>
                 <table class="company-table">
                     <tr>
                         <th>会社名</th>
@@ -34,11 +37,11 @@
                     </tr>
                     <tr>
                         <th>代表取締役</th>
-                        <td>○○ ○○</td>
+                        <td>山田 太郎</td>
                     </tr>
                     <tr>
                         <th>設立</th>
-                        <td>20XX年XX月XX日</td>
+                        <td>2020年4月1日</td>
                     </tr>
                     <tr>
                         <th>所在地</th>
@@ -50,27 +53,24 @@
                     </tr>
                     <tr>
                         <th>メールアドレス</th>
-                        <td>info@shinkai.com</td>
+                        <td>info@shinkai-tour.com</td>
                     </tr>
                     <tr>
-                        <th>事業内容</th>
-                        <td>
-                            <ul>
-                                <li>マリンアクティビティの企画・運営</li>
-                                <li>ダイビングツアー</li>
-                                <li>シュノーケリングツアー</li>
-                                <li>カヤックツアー</li>
-                                <li>マリンスポーツ用品のレンタル</li>
-                            </ul>
-                        </td>
+                        <th>営業時間</th>
+                        <td>9:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <th>定休日</th>
+                        <td>不定休</td>
                     </tr>
                 </table>
             </div>
 
             <div class="company-message">
                 <h3>代表メッセージ</h3>
-                <p>石垣島の美しい海を守りながら、安全で楽しいマリンアクティビティを提供しています。経験豊富なインストラクターが、初心者から上級者まで、一人一人に合わせたプログラムをご用意しています。</p>
-                <p>私たちは、お客様一人一人に最高の思い出を作っていただけるよう、日々努力を重ねています。石垣島の海の魅力を存分に感じていただけるよう、スタッフ一同心を込めてお迎えいたします。</p>
+                <p>私たちは、石垣島の美しい海を守りながら、安全で楽しいマリンアクティビティを提供しています。</p>
+                <p>経験豊富なインストラクターが、初心者から上級者まで、一人一人に合わせた丁寧な指導を行います。</p>
+                <p>皆様の素晴らしい思い出作りをお手伝いできることを楽しみにしています。</p>
             </div>
 
             <div class="company-philosophy">
@@ -88,5 +88,24 @@
     <footer>
         <p>&copy; <script>document.write(new Date().getFullYear());</script> 株式会社SHINKAI All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
